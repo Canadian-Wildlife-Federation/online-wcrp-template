@@ -1,5 +1,5 @@
 # ONLINE WCRP
-Tis repository is a template online WCRP repository with quarto project and files needed for a online WCRP
+This repository is a template online WCRP repository with quarto project and files needed for a online WCRP
 
 ## Anaconda Prompt
 One may want to use a virtual environment with python version 3.8-3.11 installed.
