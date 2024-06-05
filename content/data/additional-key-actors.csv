@@ -1,0 +1,7 @@
+﻿Species,Channel Gradient (%),Mean annual discharge (m3/s),Channel gradient (%),Mean Annual discharge (m3/s),Minimum Lake area (ha),Multiplier (1.5x)
+Chinook Salmon,0-3,0.46-322.5,0-5,0.28-100,NA,NA
+,"(Busch et al. 2011, Cooney and Holzer 2006)","(Bjornn and Reiser 1991, Neuman and Newcombe 1977, Woll et al. 2017, Roberge et al. 2002, Raleigh and Miller 1986)","(Woll et al. 2017, Porter et al. 2008)",(Agrawal et al. 2005),,
+Coho Salmon,0-5,0.164-59.15,0-5,0.03-40,NA,Wetland
+,"(Roberge et al. 2002, Sloat et al. 2017)","(Bjornn and Reiser 1991, Sloat et al. 2017, Neuman and Newcombe 1977, Woll et al. 2017, McMahon 1983)","(Porter et al. 2008, Rosenfeld et al. 2000)","(Agrawal et al. 2005, Burnett et al. 2007)",,
+Sockeye Salmon,0-2,0.175-65,NA,NA,200,Lake
+,"(Lake 1999, Hoopes 1972)","(Bjornn and Reiser 1991, Woll et al. 2017, Neuman and Newcombe 1977, Roberge et al. 2002)",,,(Woll et al. 2017),

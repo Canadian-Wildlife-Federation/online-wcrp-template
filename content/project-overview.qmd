@@ -1,0 +1,174 @@
+```{python echo=FALSE}
+import python.api_calls as api
+from ipywidgets import *
+import pandas as pd
+import warnings
+
+warnings.filterwarnings('ignore')
+```
+
+```{r setup, include=FALSE}
+#| echo: false
+#| warning: false
+
+library(reticulate)
+api <- import("python.api_calls")
+gain <- api$gain
+num_dam <- api$num_dam
+km_dam <- api$km_dam
+pct_dam <- api$pct_dam
+resource_km <- api$resource_km
+resource_pct <- api$resource_pct
+demo_km <- api$demo_km
+demo_pct <- api$demo_pct
+resource_sev <- api$resource_sev
+demo_sev <- api$demo_sev
+sum_road <- api$sum_road
+
+```
+
+# Project Overview {-} 
+
+## Plan Purpose, Approach, and Scope {-}
+
+The following Watershed Connectivity Remediation Plan (WCRP) ...
+
+WCRPs are long-term, actionable plans that blend local stakeholder and rightsholder knowledge with innovative GIS analyses to gain a shared understanding of where remediation efforts will have the greatest benefit for <species>. The planning process is inspired by the [Conservation Standards](https://cmp-openstandards.org/wp-content/uploads/2020/07/CMP-Open-Standards-for-the-Practice-of-Conservation-v4.0.pdf) (v.4.0), which is a conservation planning framework that allows planning teams to systematically identify, implement, and monitor strategies to apply the most effective solutions to high priority conservation problems.
+
+The planning team compiled existing barrier location and assessment data, habitat data, and previously identified priorities, and combined this with local and Indigenous knowledge to create a strategic watershed-scale plan to improve connectivity. To expand on this work the WCRP planning team applied the WCRP planning framework to define the "thematic" scope of freshwater connectivity and refine the "geographic" scope to identify only those portions of the watershed where barrier prioritization will be conducted, and subsequent remediation efforts will take place. Additionally, the team selected target fish species, assessed their current connectivity status in the watershed, defined concrete goals for gains in connectivity, and developed a priority list of barriers for remediation to achieve those goals. While the current version of this plan is based on the best-available information at the time of publishing, WCRPs are intended to be “living plans” that are updated regularly as new information becomes available, or if local priorities and contexts change. As such, this document should be interpreted as a current snap-shot in time, and future iterations of this WCRP will build upon the material presented in this plan to continuously improve barrier remediation for migratory fish in <watershed>. For more information on how WCRPs are developed, see @Mazany-Wright2021-hs. 
+
+## Vision Statement {-}
+
+Vision statement here
+
+## Project Scope {-}
+
+Connectivity is a critical component of freshwater ecosystems that encompasses a variety of factors related to ecosystem structure and function, such as the ability of aquatic organisms to disperse and/or migrate, the transportation of energy and matter (e.g., nutrient cycling and sediment flows), and temperature regulation @Seliger2018-be. Though each of these factors are important when considering the health of a watershed, for the purposes of this WCRP the term "connectivity" is defined as the degree to which aquatic organisms can disperse and/or migrate freely through freshwater systems. Within this context, connectivity is primarily constrained by physical barriers, including anthropogenic infrastructure such as dams, weirs, and stream crossings, and natural features such as waterfalls and debris flows.
+
+![SAMPLE The primary geographic scope — the Horsefly River watershed — located in the Fraser River system.](images/geo-scope-hors.png){#fig-geoscope}
+
+
+The primary geographic scope of this WCRP is ...
+
+```{r targspec, echo = FALSE, results = 'asis'}
+#| label: tbl-targspec
+#| tbl-cap: "SAMPLE Target fish species in the Horsefly River watershed. The Secwepemctsín and Western common and scientific species names are provided."
+#| warning: false
+
+library("flextable")
+
+data <- read.csv("data/species_names.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+#ft <- autofit()
+#ft |> autofit() 
+```
+
+
+## Target species {-}
+
+Target species represent the ecologically and culturally important species for which habitat connectivity is being conserved and/or restored in the watershed. The selection of these target species was driven primarily by the targets species of the primary fund supporting this planning work. 
+
+### SAMPLE Anadromous Salmon {-}
+
+Anadromous salmon are cultural and ecological keystone species that contribute to productive ecosystems by contributing marine-derived nutrients to the watershed and forming an important food source for other species. Salmon species are sacred to the NStQ, having sustained life, trading economies, and culture since time immemorial (@WLFN2021Patterns, @XFN2021History, N. Singi pers. comm.). The stewardship of the resources and fisheries in their traditional territories are imbued in the spirit of the NStQ through a symbiotic relationship based on respect – the NStQ never take more salmon than is needed and there is no waste. The entirety of the salmon is used - smoked and dried to sustain the NStQ through the winter months, the roe harvested for consumption, salmon oil rendered to be stored and traded, and the skin used to store the oil (@Wilson1998-kb, @XFN2021History, N. Singi pers. comm.). The salmon runs begin to return to the Horsefly River watershed in early August, and the NStQ traditionally celebrate and feast at this time. The harvest of the salmon strengthens the cultural connection to the land and the waters, providing an important food source for communities and the opportunity to pass knowledge and ceremony to future generations through fishing and fish processing (@WLFN2021Patterns`, @XFN2021History). 
+
+Anadromous salmon populations in the Horsefly River watershed have declined significantly in the past few decades, with the populations of all three focal species being listed as Threatened or Endangered by the Committee On the Status of Endangered Wildlife In Canada (COSEWIC). This has been exacerbated by the Big Bar landslide on the Fraser River in 2019, leading the four NStQ communities to voluntarily close the salmon fishery from 2019-2022. The stewardship of their waters continues through the work of the NStQ member communities and the Northern Shuswap Tribal Council.
+
+## Barrier Types {-}
+
+The following table highlights which barrier types pose the greatest threat to <species> in the watershed. The results of this assessment were used to inform the subsequent planning steps, as well as to identify knowledge gaps where there is little spatial data to inform the assessment for a specific barrier type. 
+
+
+
+```{python barriertype, echo=FALSE}
+#| label: tbl-barriertype
+#| tbl-cap: "SAMPLE Connectivity status assessment for linear habitat (spawning and rearing)."
+#| warning: false
+#| echo: false
+
+
+
+#condition
+def condition(pct):
+    rating = ""
+    if pct < 30 : rating = "Low"
+    elif (pct >= 30) and (pct < 71) : rating = "Medium"
+    elif (pct >= 71) and (pct < 90) : rating = "High"
+    else : rating = "Very High"
+    return rating
+
+#rating classifier
+def rating(threat, barrier):
+    if threat == "extent":
+        if barrier == "DAM":
+            pct = api.barrier_extent(barrier)[1]
+            rating = condition(pct)
+        elif barrier == "ROAD":
+            pct = api.barrier_extent('ROAD, RESOURCE/OTHER')[1] + api.barrier_extent('ROAD, DEMOGRAPHIC')[1]
+            rating = condition(pct)
+    elif threat == "severity":
+        if barrier == "DAM":
+            pct = api.barrier_severity(barrier)[2]
+            rating = condition(pct)
+        elif barrier == "ROAD":
+            pct = api.barrier_severity('ROAD, RESOURCE/OTHER')[2] + api.barrier_severity('ROAD, DEMOGRAPHIC')[2]
+            rating = condition(pct)
+            
+    return rating
+            
+
+df = pd.DataFrame({"Barrier Types":["Road-Stream Crossings","Lateral Barriers","Small Dams(<3m height)","Trail-stream Crossings", "Natural Barriers"],
+                   "Extent":[rating("extent", "ROAD"),"High",rating("extent", "DAM"), "Low", "Medium"],
+                   "Severity":[rating("severity", "ROAD"),"Very High",rating("severity", "DAM"), "Low", "High"],
+                   "Irreversibility":["Medium","High","High", "Medium", "Low"],
+                   "Overall Threat Rating:":["Very High","High","Medium", "Low", "Low"]
+                   }).style.set_properties(subset=["Overall Threat Rating:"], **{'font-weight': 'bold'})
+
+def highlight(val):
+    red = '#ff0000;'
+    yellow = '#ffff00;'
+    lgreen = '#92d050;'
+    dgreen = '#03853e;'
+
+    if val=="Very High": color = red
+    elif val=="High": color = yellow
+    elif val=="Medium": color = lgreen
+    elif val =="Low": color = dgreen
+    else: color = 'white'
+    return 'background-color: %s' % color
+
+#df = df.style.set_properties(subset=["Overall Threat Rating"], **{'font-weight': 'bold'})
+
+data = df.applymap(highlight).hide()
+
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+
+```
+
+
+### Small Dams (<3 m height) {-}
+
+There are `r num_dam` mapped small dams on “potentially accessible” stream segments in the watershed, blocking a total of `r km_dam` km (~`r pct_dam`% of the total habitat) of modelled spawning and rearing habitat for <species>, resulting in a <condition> extent. The extent rating of these structures was confirmed by the planning team.
+
+### Road-stream Crossings {-}
+
+There are `r sum_road` assessed and modelled crossings located on stream segments with modelled habitat. Demographic road crossings (highways, municipal, and paved roads) block `r demo_km` km of habitat (~`r demo_pct`% of the total blocked habitat), with `r demo_sev`% of assessed crossings having been identified as barriers to fish passage. Resource roads block `r resource_km` km of habitat (~`r resource_pct`%), with `r resource_sev`% of assessed crossings having been identified as barriers.
+
+### Trail-stream crossings{-}
+
+There are ... 
+
+### Lateral Barriers{-}
+
+There are ...
+
+### Natural Barriers {-}
+
+Natural barriers to fish passage can include debris flows, log jams, sediment deposits, etc., but natural features that have always restricted fish passage (e.g., waterfalls) are not considered under this barrier type. Natural barriers are difficult to include in a spatial prioritization framework due to their transient nature.

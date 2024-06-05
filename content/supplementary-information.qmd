@@ -1,0 +1,209 @@
+
+# Supplementary Information {-}
+
+## Situation Analysis {-}
+
+The following situation model was developed by the WCRP planning team to “map” the project context and brainstorm potential actions for implementation. Green text is used to identify actions that were selected for implementation (see Strategies & Actions), and red text is used to identify actions that the project team has decided to exclude from the current iteration of the plan, as they were either outside of the project scope, or were deemed to be ineffective by the planning team. 
+
+![SAMPLE Situation analysis developed by the planning team to identify factors that contribute to fragmentation (orange boxes), biophysical results (brown boxes), and potential strategies/actions to improve connectivity (yellow hexagons) for target species in the Horsefly River watershed.](images/situation-analysis.png){#fig-sitan}
+
+## Strategies & Actions {-}
+
+Effectiveness evaluation of identified conservation strategies and associated actions to improve connectivity for target species in <watershed>. The planning team identified five broad strategies to implement through this WCRP, 1) crossing remediation, 2) lateral barrier remediation, 3) dam remediation, 4) barrier prevention, and 5) communication and education. Individual actions were qualitatively evaluated based on the anticipated effect each action will have on realizing on-the-ground gains in connectivity. Effectiveness ratings are based on a combination of "Feasibility and "Impact", Feasibility is defined as the degree to which the project team can implement the action within realistic constraints (financial, time, ethical, etc.) and Impact is the degree to which the action is likely to contribute to achieving one or more of the goals established in this plan.
+
+## Strategy 1: Crossing Remediation {-}
+```{python echo=FALSE}
+#| label: tbl-S1
+#| tbl-cap: "Strategy 1"
+#| warning: false
+#| echo: false
+
+import numpy as np
+from IPython.display import display
+import pandas as pd
+
+data = pd.read_csv('data/strategy-crossing-remediation.csv', index_col=False, skip_blank_lines=False )
+ 
+def fix_table(val):
+    return str(val)
+
+def highlighttab7(val):
+    red = '#ff0000;'
+    yellow = '#ffff00;'
+    lgreen = '#92d050;'
+    dgreen = '#03853e;'
+
+    if val=="Medium" or val=="Need more information": color = yellow
+    elif val=="Very high" or val=="Very effective" : color = lgreen
+    elif val =="High" or val=="Effective": color = dgreen
+    else: color = 'white'
+    return 'background-color: %s' % color
+
+data = data.replace(np.nan, '', regex=True)
+
+data = data.applymap(fix_table)
+
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+
+```
+
+
+## Strategy 2: Lateral Barrier Remediation {-}
+```{python echo=FALSE}
+#| label: tbl-S2
+#| tbl-cap: "Strategy 2"
+#| warning: false
+#| echo: false
+
+data = pd.read_csv('data/strategy-lateral-barrier-remediation.csv', escapechar='\n', index_col=False)
+
+data = data.replace(np.nan, '', regex=True)
+
+data = data.applymap(fix_table)
+
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
+
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+
+```
+
+
+## Strategy 3: Dam Remediation {-}
+```{python echo=FALSE}
+#| label: tbl-S3
+#| tbl-cap: "Strategy 3"
+#| warning: false
+#| echo: false
+
+data = pd.read_csv('data/strategy-dam-remediation.csv', index_col=False)
+
+data = data.replace(np.nan, '', regex=True)
+
+data = data.applymap(fix_table)
+
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
+
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+
+```
+
+
+## Strategy 4: Barrier Prevention {-}
+```{python echo=FALSE}
+#| label: tbl-S4
+#| tbl-cap: "Strategy 4"
+#| warning: false
+#| echo: false
+
+import pandas as pd
+
+data = pd.read_csv('data/strategy-barrier-prevention.csv', index_col=False)
+
+data = data.applymap(fix_table)
+
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
+
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+
+```
+
+## Strategy 5: Communication and Education {-}
+```{python echo=FALSE}
+#| label: tbl-S5
+#| tbl-cap: "Strategy 5"
+#| warning: false
+#| echo: false
+
+data = pd.read_csv('data/strategy-comm-edu.csv', index_col=False)
+
+data = data.replace(np.nan, '', regex=True)
+
+data = data.applymap(fix_table)
+
+data = data.style.applymap(highlighttab7).hide().set_properties(**{'text-align': 'left'})
+
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+```
+
+## Theories of Change & Objectives {-}
+
+Theories of Change are explicit assumptions around how the identified actions will achieve gains in connectivity and contribute towards reaching the goals of the plan. To develop Theories of Change, the planning team developed explicit assumptions for each strategy which helped to clarify the rationale used for undertaking actions and provided an opportunity for feedback on invalid assumptions or missing opportunities. The Theories of Change are results oriented and clearly define the expected outcome. The following theory of change models were developed by the WCRP planning team to “map” the causal (“if-then”) progression of assumptions of how the actions within a strategy work together to achieve project goals. 
+
+![Theory of change developed by the planning team for the actions identified under Strategy 1: Crossing Remediation in the <watershed>.](images/flowchart-crossing-rem.png){#fig-stra1}
+
+![Theory of change developed by the planning team for the actions identified under Strategy 2: Lateral Barrier Remediation in <watershed>.](images/flowchart-lat-bar-rem.png){#fig-stra2}
+
+![Theory of change developed by the planning team for the actions identified under Strategy 3: Dam Remediation in <watershed>.](images/flowchart-dam-rem.png){#fig-stra3}
+
+![Theory of change developed by the planning team for the actions identified under Strategy 4: Barrier Prevention in <watershed>.](images/flowchart-bar-prevent.png){#fig-stra4}
+
+## Operational Plan {-}
+
+The operational plan represents a preliminary exercise undertaken by the planning team to identify the potential leads, potential participants, and estimated cost for the implementation of each action in <watershed>. The table below summarizes individuals, groups, or organizations that the planning team felt could lead or participate in the implementation of the plan and should be interpreted as the first step in on-going planning and engagement to develop more detailed and sophisticated action plans for each entry in the table. The individuals, groups, and organizations listed under the "Lead(s)" or "Potential Participants" columns are those that provisionally expressed interest in participating in one of those roles or were suggested by the planning team for further engagement (denoted in bold), for those that are not members of the planning team. The leads, participants, and estimated costs in the operational plan are not binding nor an official commitment of resources, but rather provide a roadmap for future coordination and engagement to work towards implementation of the WCRP.
+
+```{python opplan, echo=FALSE}
+#| label: tbl-opplan
+#| tbl-cap: "Operational plan to support the implementation of strategies and actions to improve connectivity for target species in <watershed>."
+#| warning: false
+#| echo: false
+
+from IPython.display import display
+import pandas as pd
+import numpy as np
+
+
+def df_operation(val):
+    return "background-color: black; color: white"
+
+
+data = pd.read_csv('data/operational-plan.csv', index_col=False)
+
+data = data.replace(np.nan, '', regex=True)
+
+rows = pd.IndexSlice[[0,10,16,23,26,29,30,31], :]
+
+data = data.style.applymap(df_operation, subset=rows).hide().set_properties(**{'text-align': 'left'})
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+
+```
+
+## Funding Sources {-}
+```{r fund, echo = FALSE, results = 'asis'}
+#| label: tbl-fund
+#| tbl-cap: "Potential funding sources for plan implementation in <watershed>. The Canadian Wildlife Federation and the planning team can coordinate proposal submission through these sources."
+#| warning: false
+
+library("flextable")
+
+data <- read.csv("data/funding-sources.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft |> autofit() 
+```

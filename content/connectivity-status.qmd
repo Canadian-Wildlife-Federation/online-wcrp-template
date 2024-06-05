@@ -1,0 +1,65 @@
+```{python echo=FALSE}
+import warnings
+import pandas as pd
+import numpy as np
+import python.api_calls as api
+import python.connectivity_assess as conn_table
+
+warnings.filterwarnings('ignore')
+
+
+```
+
+```{r echo=FALSE}
+#| echo: false
+#| include: true
+#| warning: false
+
+library(reticulate)
+
+```
+
+# Connectivity Status Assessment and Goals {-}
+
+## Connectivity Status Assessment {-}
+
+(see @tbl-connectivity).
+
+The current connectivity status assessment relies on GIS analyses to map known and modelled barriers to fish passage, identify stream reaches that have potential spawning and rearing habitat, estimate the proportion of habitat that is currently accessible to target species, and prioritize barriers for field assessment that would provide the greatest gains in connectivity. To support a flexible prioritization framework to identify priority barriers in the watershed, two assumptions are made: 1,any modelled (i.e., passability status is unknown) or partial barriers are treated as complete barriers to passage and 2, the habitat modelling is binary, it does not assign any habitat quality values. As such, the current connectivity status will be refined over time as more data on habitat and barriers are collected. For more detail on how the connectivity status assessments were conducted, see Data Download and Methods. 
+
+```{python echo=FALSE}
+#| label: tbl-connectivity
+#| tbl-cap: "SAMPLE TABLE Connectivity status assessment for spawning and rearing habitat."
+#| warning: false
+#| echo: false
+
+df = conn_table.make_assess_table("Andromous Salmon", "Available Spawning Habitat", "% of total habitat", 50, 75, 90, api.connect)
+df
+
+```
+
+
+## Goals {-}
+
+
+```{python echo=FALSE}
+#| label: tbl-goals
+#| tbl-cap: "SAMPLE TABLE Goals to improve spawning and rearing habitat connectivity for target species in the watershed. The goals were established through discussions with the planning team and represent the resulting desired state of connectivity in the watershed. The goals are subject to change as more information and data are collected over the course of the plan timeline (e.g., the current connectivity status is updated based on barrier field assessments)."
+#| warning: false
+#| echo: false
+df = pd.DataFrame({"Goal #": [1,2],
+                   "Goal": ["By 2040, the percent (%) of total linear habitat accessible to anadromous salmon will increase from " + str(api.connect)+"% " + " to 96% within the Horsefly River watershed (i.e., reconnect at least "+ str(api.gain) +" km of habitat).",
+                            "By 2024, the total area of overwintering habitat accessible to Anadromous Salmon will increase by 1,500 m2 within the Horsefly River watershed. "]
+                    })
+
+data = df.style.hide().set_properties(**{'text-align': 'left'})
+
+data.set_table_styles(
+   [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }])
+
+```
+
+

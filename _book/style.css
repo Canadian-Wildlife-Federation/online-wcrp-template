@@ -1,0 +1,54 @@
+caption, .table-caption, caption.p {
+  text-align: left !important;
+}
+p.caption {
+  color: #008270;
+  margin-top: 10px;
+  text-align: left;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+h1 {
+    color: #008270 !important;
+}
+
+h2 {
+    color: black;
+}
+
+h3 {
+    color: black;
+}
+
+th {
+  background-color: #008270;
+    color: white;
+    text-align: left;
+}
+
+.quarto-title-block .quarto-title-banner {
+  /* background-image: url(images/spawn.jpg);  */
+  background-size: 200px;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-left: 10px;
+  background-origin: content-box;
+}
+
+.listing p{   font-weight:bold; }
+
+
+
+/* .output {
+  max-height: 500px;
+  overflow-x: scroll;
+  } */

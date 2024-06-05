@@ -1,0 +1,26 @@
+# Data Download and Methods {-}
+
+## Modelled Habitat Maps {-}
+
+High-resolution PDF maps accessed [here](url). In each individual map sheet, priority barriers are symbolized using the following notation: 
+
+![Map description.](images/overview-map-hors.png){#fig-over}
+
+## Connectivity Status Assessment Methods {-}
+
+The connectivity status assessment ... The model spatially locates known and modelled barriers to fish passage, identifies potential spawning and rearing habitat for target species, and estimates the amount of habitat that is currently accessible to target species. The habitat model uses two geomorphic characteristics of the stream network — channel gradient and mean annual discharge — to identify potential spawning habitat and rearing habitat for each target species. The habitat model does not attempt to definitively map each habitat type nor estimate habitat quality, but rather identifies stream segments that have high potential to support spawning or rearing habitat for each species based on the geomorphic characteristics of the segment. For more details on the connectivity and habitat model structure and parameters, please see @Mazany-Wright2021-rz. The variables and thresholds used to model potential spawning and rearing habitat for each target species are summarized in (table).
+
+```{r, echo = FALSE, results = 'asis'}
+#| label: tbl-param
+#| tbl-cap: "Additional Key Actors. Key Actors are the individuals, groups, and/or organizations, outside of the planning team, with influence and relevant experience in the watershed, whose engagement will be critical for the successful implementation of this WCRP."
+#| warning: false
+
+library("flextable")
+
+data <- read.csv("data/additional-key-actors.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft |> autofit() 
+```

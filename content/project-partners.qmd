@@ -1,0 +1,37 @@
+
+## Project Partners {-}
+
+## Planning Team {-}
+
+```{r echo = FALSE}
+#| label: tbl-planteam
+#| tbl-cap: "SAMPLE <watershed> WCRP planning team members. Planning team members contributed to the development of this plan by participating in a series of workshops and document and data review. The plan was generated based on the input and feedback of the local groups and organizations listed in this table."
+#| warning: false
+
+library("flextable")
+
+data <- read.csv("data/planning_team.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft |> autofit() 
+```
+
+## Key Actors {-}
+
+```{r keyact, echo = FALSE, results = 'asis'}
+#| label: tbl-keyact
+#| tbl-cap: "SAMPLE Additional Key Actors in the <watershed>. Key Actors are the individuals, groups, and/or organizations, outside of the planning team, with influence and relevant experience in the watershed, whose engagement will be critical for the successful implementation of this WCRP."
+#| warning: false
+
+library("flextable")
+
+data <- read.csv("data/key_actors.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft |> autofit() 
+```
+

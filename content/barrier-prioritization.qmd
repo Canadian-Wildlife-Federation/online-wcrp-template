@@ -1,0 +1,113 @@
+```{python echo=FALSE}
+import python.api_calls as api
+import pandas as pd
+import warnings
+
+warnings.filterwarnings('ignore')
+```
+```{r setup, include=FALSE}
+#| echo: false
+#| warning: false
+
+library(reticulate)
+api <- import("python.api_calls")
+gain <- api$gain
+
+source("Rscripts/table_formatting.R")
+
+```
+
+# Barrier Prioritization {-}
+
+
+## <Watershed name> Barrier Prioritization Summary {-}
+
+The primary conservation outcome of the WCRP will be ... To achieve this, it is necessary to prioritize and identify a suite of barriers that, if remediated, will provide access to a minimum of `r gain` km of spawning or rearing habitat (@tbl-gainReqs):
+
+
+```{python echo=FALSE}
+#| label: tbl-gainReqs
+#| tbl-cap: "SAMPLE Spawning and rearing habitat connectivity gain requirements to meet WCRP goals in <watershed>. The measures of currently accessible and total habitat values are derived from the Intrinsic Potential habitat model."
+#| warning: false
+#| echo: false
+
+# Variables to API calls
+connect = api.watershed_connectivity("ALL")[0]
+total = round(api.watershed_connectivity("ALL")[1],2) #total km in watershed
+access = round(api.watershed_connectivity("ALL")[2],2)
+gain = round((total*0.96)-access,2)
+
+# Data frame with table info
+df = pd.DataFrame({"Habitat Type":["Spawning and Rearing"],
+                   "Currently accessible (km)":[str(access)],
+                   "Total": [str(total)],
+                   "Current Connectivity Status":[str(connect)+"%"],
+                   "Goal": ["96%"],
+                   "Gain required (km)": [str(gain)]
+                   })
+                   
+# Apply table styling
+styled_df = df.style.hide().set_properties(**{'text-align': 'left'})
+# header styling
+table_styles = [{
+       'selector': 'th',
+       'props': [('background-color', '#008270'),('text-align', 'left')]
+   }]
+styled_df.set_table_styles(table_styles)
+
+```
+
+The barrier prioritization analysis ranked barriers by [...] A longer list of barriers is needed due to the inherent assumptions in the connectivity model, habitat model, and gaps in available data. Barriers that have been modelled (i.e., points where streams and road/rail networks intersect) are assumed to be barriers until field verification is undertaken and structures that have been assessed as "potential" barriers (e.g., may be passable at certain flow levels or for certain life history stages) require further investigation before a definitive remediation decision is made. Additionally, the habitat model identifies stream segments that have the potential to support spawning or rearing habitat for target species but does not attempt to quantify habitat quality or suitability (see Appendix B), which will require additional field verification once barrier assessments have completed.Data deficient structures represents structures that are a priority to evaluate further through barrier assessment and habitat confirmations because some structures will likely be passable, others will not be associated with usable habitat, and others may not be feasible to remediate because of logistic considerations (@tbl-deficient). Some barriers were moved forward to the "priority barrier list" (see @tbl-priority) and others were eliminated from consideration due to one or more of the considerations discussed above (see @tbl-remove). The priority barrier list represents structures that were confirmed to be partial or full barriers to fish passage and that block access to confirmed habitat. Barriers on the priority list were reviewed by planning team members and selected for inclusion for proactive pursual of remediation.  For more details on the barrier prioritization model, please see @Mazany-Wright2021-rz.
+
+
+```{r priority, echo = FALSE, results = 'asis'}
+#| label: tbl-priority
+#| tbl-cap: "SAMPLE priority barrier list, which includes barriers that have undergone field assessment, been reviewed by the planning team, and selected to pursue for proactive remediation."
+#| warning: false
+#| echo: false
+
+data <- read.csv("data/priority_barriers_for_rehabilitation_table.csv", check.names=FALSE)
+prior_num <- nrow(data)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+```{r deficient, echo = FALSE, results = 'asis'}
+#| label: tbl-deficient
+#| tbl-cap: "Assessed structures that remain data deficient"
+#| warning: false
+#| echo: false
+
+data <- read.csv("data/assessed_data_deficient_structures_table.csv", check.names=FALSE)
+inter_num <- nrow(data)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+```{r remove, echo = FALSE, results = 'asis'}
+#| label: tbl-remove
+#| tbl-cap: "List of barriers that were prioritized as part of the first iteration but were removed from consideration for pursual of proactive remediation following discussion with the planning team due to these structures not existing, being passable, not be associated with usable habitat, or deemed not feasible to remediate because of logistic considerations."
+#| warning: false
+#| echo: false
+
+
+data <- read.csv("data/excluded_structures_table.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```
+
+
+```{r rehab, echo = FALSE, results = 'asis'}
+#| label: tbl-rehab
+#| tbl-cap: "Rehabilitated structures."
+#| warning: false
+#| echo: false
+
+data <- read.csv("data/rehabilitated_structures_table.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- format_flextable(ft)
+ft
+```

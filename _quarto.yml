@@ -1,0 +1,70 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Title"
+  author: "Canadian Wildlife Federation"
+  date: last-modified
+  date-format: "DD-MM-YYYY"
+  chapters:
+    - index.qmd
+    - content/project-overview.qmd
+    - content/connectivity-status.qmd
+    - content/barrier-prioritization.qmd
+    - content/work-planning.qmd
+    - content/references.qmd
+    - content/version-history.qmd
+  appendices: 
+    - content/project-partners.qmd
+    - content/supplementary-information.qmd 
+    - content/data-methods.qmd
+  
+  
+  sidebar: 
+    pinned: true
+    logo: images/logo.png
+    tools: 
+      - icon: save
+        menu: 
+          - text: Word DOCX
+            url: _book/Horsefly-River-Watershed-Secwepemcúl’ecw-Connectivity-Remediation-Plan--2021---2040.docx
+
+
+
+
+bibliography: references.bib
+# nocite: |
+#   @*
+
+format:
+  html:
+    css: style.css
+    theme: cosmo
+    toc-title: "WCRP"
+    crossref:
+      fig-title: '**Figure**'
+      tbl-title: '**Table**'
+  pdf: 
+    toc: true
+    toc-depth: 2
+    documentclass: scrreprt
+    colorlinks: true
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+    # reference-doc: custom-reference-doc.docx
+    tbl-colwidths: [40, 30, 30]
+    keep-md: true
+    keep-ipynb: true
+
+
+#jupyter: "local-venv"
+
+# execute:
+#   cache: true
+
+#titlepage-bg-image: images/spawn.jpg
+
+title-block-banner: "#f6f6f6"
