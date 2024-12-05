@@ -13,6 +13,8 @@ def barrier_extent(barrier_type):
     parse = response_api.text
     result = json.loads(parse)
 
+    result = [item for item in result if barrier_type in item['crossing_feature_type']]
+
     blocked_km = result[0]['all_habitat_blocked_km']
     blocked_pct = result[0]['extent_pct']
 
@@ -24,6 +26,8 @@ def barrier_count(barrier_type):
     response_api = requests.get(request)
     parse = response_api.text
     result = json.loads(parse)
+
+    result = [item for item in result if barrier_type == item['crossing_feature_type'] and item['status'] == 'HABITAT']
 
     n_passable = result[0]['n_passable']
     n_barrier = result[0]['n_barrier']
@@ -41,6 +45,8 @@ def barrier_severity(barrier_type):
     response_api = requests.get(request)
     parse = response_api.text
     result = json.loads(parse)
+
+    result = [item for item in result if barrier_type in item['structure_type']]
 
     n_assessed_barrier = result[0]['n_assessed_barrier']
     n_assess_total = result[0]['n_assess_total']
