@@ -1,0 +1,18 @@
+# Excluded Structures {-}
+```{r params, echo = FALSE, results = 'asis'}
+#| label: tbl-param
+#| tbl-cap: "Excluded Structures"
+#| warning: false
+
+library("flextable")
+
+data <- read.csv("data/excluded_structures.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft <- width(ft, width = 1)
+ft 
+```
+
+

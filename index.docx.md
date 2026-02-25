@@ -1,0 +1,9 @@
+![](spawn.jpg)
+
+## Acknowledgements {-}
+
+This plan represents the culmination of a collaborative planning process undertaken in the Lower Nicola River watershed over many months of work with a multi-partner planning team of individuals and groups passionate about the conservation and restoration of freshwater ecosystems and the species they support. Plan development was funded by the BC Salmon Restoration and Innovation Fund, Canada Nature Fund for Aquatic Species at Risk, and the RBC Bluewater Project. We were fortunate to benefit from the feedback, guidance, and wisdom of many groups and individuals who volunteered their time throughout this process — this publication would not have been possible without the engagement of our partners and the planning team [see Table 1](project-partners.qmd).  
+
+The Canadian Wildlife Federation recognizes that the lands and waters that form the basis of this plan are the traditional unceded territory of the Nlaka’pamux/Scw'exmx and Syilx peoples. We are grateful for the opportunity to learn from the stewards of this land and work together to benefit Pacific salmon and Steelhead. A special thank you to the Lower Nicola Indian Band for sharing the traditional Nłeʔkepmxcín (Nlaka’pamuxcin) names used in this plan.  
+
+We recognize the incredibly rich history of fish and fish habitat conservation and restoration work that has occurred in the Lower Nicola River watershed to date. A special thank you to Richard Bailey for providing background and contextual information on the myriad threats facing anadromous salmonid populations in the Lower Nicola. Thank you to Richard, Paul Mozin, Sarah Ostorforoff, and Tom Willms for identifying lateral barrier sites to assess during the 2021 field season. We are excited to continue partnering with local groups and organizations to build upon existing initiatives and provide a road map to push connectivity remediation forward over the next 10 years and beyond.

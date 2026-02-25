@@ -6,8 +6,6 @@ import python.api_calls as api
 import python.connectivity_assess as conn_table
 
 warnings.filterwarnings('ignore')
-
-
 ```
 
 ```{r echo=FALSE}
@@ -16,50 +14,111 @@ warnings.filterwarnings('ignore')
 #| warning: false
 
 library(reticulate)
+library(flextable)
+
 
 ```
 
-# Connectivity Status Assessment and Goals {-}
+# Methods and Definitions
 
-## Connectivity Status Assessment {-}
+## Connectivity Modelling {-}
+To prioritize culverts for remediation, connectivity status and structure ranks were produced using BCFishPass, an open-source freshwater connectivity modelling framework, which builds off provincial barrier mapping tools (Mount et al. 2011) and includes three sub-models: 
 
-(see @tbl-connectivity).
+Accessibility model: Naturally accessible waterbodies are those that are considered likely accessible to focal species if no human-made barriers existed on the landscape. These were spatially delineated for each focal species using natural barriers (i.e., waterfalls, gradient barriers, or subsurface flows) that would naturally limit upstream movement. 
 
-The current connectivity status assessment relies on GIS analyses to map known and modelled barriers to fish passage, identify stream reaches that have potential spawning and rearing habitat, estimate the proportion of habitat that is currently accessible to target species, and prioritize barriers for field assessment that would provide the greatest gains in connectivity. To support a flexible prioritization framework to identify priority barriers in the watershed, two assumptions are made: 1,any modelled (i.e., passability status is unknown) or partial barriers are treated as complete barriers to passage and 2, the habitat modelling is binary, it does not assign any habitat quality values. As such, the current connectivity status will be refined over time as more data on habitat and barriers are collected. For more detail on how the connectivity status assessments were conducted, see Data Download and Methods. 
+Habitat model: A subset of the naturally accessible waterbody layer was defined as key habitat, i.e., habitat likely to support spawning or rearing, rather than simply being used as a movement corridor. The habitat model identifies areas that have a higher potential to support key habitat based on stream channel gradient and discharge. 
 
-```{python echo=FALSE}
-#| label: tbl-connectivity
-#| tbl-cap: "SAMPLE TABLE Connectivity status assessment for spawning and rearing habitat."
+Connectivity model: A layer of known or modelled structures was overlaid on the key habitat model output. Modelled stream crossings were created from stream network and road/railway Geographic Information System (GIS) data, by mapping where a road or railway crosses a stream. Dam data were obtained from the Canadian Aquatic Barriers Database. All mapped dams and modeled crossings (henceforth structures) downstream of key habitat were initially considered potential barriers. 
+
+Some structures were classified as non-existent or passable prior to initiating field work and excluded from the model. Stream crossings on 6th order and larger streams were assumed to be bridges and classified as passable.  Remaining structures were checked on Google Earth to verify they were not bridges, cross-ditches, or non-existent crossings. Data from previous field assessments was obtained from the Provincial Stream Crossing Inventory System (PSCIS), and structures that had been assessed and scored as passable were classified as such. Assessed structures that were scored as barriers or potential barriers were considered barriers in the model, along with all dams lacking fishways and structures that have not yet been assessed. Models were run to produce initial outputs, and maps were created showing disconnected key habitat and associated structures. 
+
+Local knowledge and data were incorporated into model development in two phases and overruled modeled outputs where the two differed. Existing reports on habitat, barriers, and fish distributions, when available, were incorporated into the initial model outputs. Maps of initial outputs were then shared with local knowledge holders, who identified model errors or omissions (e.g., passable structures, or known spawning habitats that were not identified by the model). Corrections to model data were made based on local knowledge, and models were re-run. 
+
+Connectivity status was estimated by calculating the proportion of key habitat that is connected to the ocean (i.e., not fragmented by human-made barriers). Key habitat with no structures or only passable structures downstream was considered connected.  
+
+Ranking: Structures, and sets of structures that combine to disconnect habitat, were ranked by the amount of key habitat upstream. A ranked structure list helps determine where structures are blocking large amounts of habitat, and where removal of an individual structure or a group of structures (a “set”) is more effective in opening up habitat, by ranking structures based on amount of habitat blocked. Top-ranked structures or sets of structures represented those with the most key habitat upstream and did not consider other factors such as habitat quality and cost, which ultimately drove restoration prioritization when planning field work and deciding priorities with partners.  
+
+Habitat Accumulation Curves (HACs): HACs are used to visualize structure rankings in order of the relative amount of habitat they are blocking upstream. Structures are plotted in order of km’s blocked by structures. HACs illustrate restoration priorities by showing how much habitat becomes accessible as barriers are removed or improved. This method of visualizing cumulative habitat gains is useful for prioritizing restoration work and communicating results to partners. 
+
+
+## Structure Ranking {-}
+### Lateral Barriers (Including to thermal refugia) {.unnumbered}
+
+There is a lack of comprehensive data and mapping of lateral barriers and potential thermal refugia in the watershed to currently support a strategic prioritization (see @tbl-S1). However, local knowledge was used to compile a list of candidate sites for field verification as a starting point to improve lateral and thermal connectivity. These sites were investigated in 2021 (@Mozin2021), but an atmospheric river event later that winter resulted in major modifications and rearrangement of the Coldwater River and mainstem Nicola River downstream of the Coldwater confluence, rendering the outcome of those investigations no longer relevant. Further assessment of off-channel thermal refugia was undertaken by Nooaitch Band in 2023, with results of those assessments expected to be released to the broader community working on conservation in the Lower Nicola Watershed in the near future.  
+
+### Longitudinal Field Assessment Ranking Process {.unnumbered}
+
+There is a lack of comprehensive data and mapping of lateral barriers and potential thermal refugia in the watershed to currently support a strategic prioritization (see @tbl-S1). However, local knowledge was used to compile a list of candidate sites for field verification as a starting point to improve lateral and thermal connectivity. These sites were investigated in 2021 (@Mozin2021), but an atmospheric river event later that winter resulted in major modifications and rearrangement of the Coldwater River and mainstem Nicola River downstream of the Coldwater confluence, rendering the outcome of those investigations no longer relevant. Further assessment of off-channel thermal refugia was undertaken by Nooaitch Band in 2023, with results of those assessments expected to be released to the broader community working on conservation in the Lower Nicola Watershed in the near future.  
+
+### Longitudinal Structure Prioritization Summary {.unnumbered}
+
+There is a lack of comprehensive data and mapping of lateral barriers and potential thermal refugia in the watershed to currently support a strategic prioritization (see @tbl-S1). However, local knowledge was used to compile a list of candidate sites for field verification as a starting point to improve lateral and thermal connectivity. These sites were investigated in 2021 (@Mozin2021), but an atmospheric river event later that winter resulted in major modifications and rearrangement of the Coldwater River and mainstem Nicola River downstream of the Coldwater confluence, rendering the outcome of those investigations no longer relevant. Further assessment of off-channel thermal refugia was undertaken by Nooaitch Band in 2023, with results of those assessments expected to be released to the broader community working on conservation in the Lower Nicola Watershed in the near future.  
+
+```{r rehab, echo = FALSE, results = 'asis'}
+#| label: tbl-confirmed
+#| tbl-cap: "Confirmed barriers"
 #| warning: false
 #| echo: false
 
-df = conn_table.make_assess_table("Andromous Salmon", "Available Spawning Habitat", "% of total habitat", 50, 75, 90, api.connect)
-df
-
+data <- read.csv("data/confirmed_barriers.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft |> autofit() 
 ```
 
 
-## Goals {-}
-
-
-```{python echo=FALSE}
-#| label: tbl-goals
-#| tbl-cap: "SAMPLE TABLE Goals to improve spawning and rearing habitat connectivity for target species in the watershed. The goals were established through discussions with the planning team and represent the resulting desired state of connectivity in the watershed. The goals are subject to change as more information and data are collected over the course of the plan timeline (e.g., the current connectivity status is updated based on barrier field assessments)."
+```{r rehab, echo = FALSE, results = 'asis'}
+#| label: tbl-datadeficient
+#| tbl-cap: "Assessed structures that remain data deficient"
 #| warning: false
 #| echo: false
-df = pd.DataFrame({"Goal #": [1,2],
-                   "Goal": ["By 2040, the percent (%) of total linear habitat accessible to anadromous salmon will increase from " + str(api.connect)+"% " + " to 96% within the Horsefly River watershed (i.e., reconnect at least "+ str(api.gain) +" km of habitat).",
-                            "By 2024, the total area of overwintering habitat accessible to Anadromous Salmon will increase by 1,500 m2 within the Horsefly River watershed. "]
-                    })
 
-data = df.style.hide().set_properties(**{'text-align': 'left'})
+data <- read.csv("data/assessed_strucDD.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft |> autofit() 
 
-data.set_table_styles(
-   [{
-       'selector': 'th',
-       'props': [('background-color', '#008270'),('text-align', 'left')]
-   }])
-
+#ft <- format_flextable(ft)
+#ft
 ```
 
 
+
+
+```{r rehab, echo = FALSE, results = 'asis'}
+#| label: tbl-rehabilitated
+#| tbl-cap: "Rehabilitated Structures"
+#| warning: false
+#| echo: false
+
+data <- read.csv("data/rehabilitated_barriers.csv", check.names=FALSE)
+ft <- flextable(data)
+ft <- bg(ft, bg = "#008270", part = "header")
+ft <- color(ft, color = "white", part = "header")
+ft <- set_caption(ft)
+ft |> autofit() 
+
+#ft <- format_flextable(ft)
+#ft
+```
+
+## Glossary {-}
+### Natural Barriers {.unnumbered}
+
+Natural barriers to fish passage can include debris flows, log jams, and sediment deposits, etc., but natural features that have always restricted fish passage (e.g., waterfalls) are not considered under this structure type. Natural barriers are difficult to include in a spatial prioritization framework due to their transient nature. The planning team felt that the major drivers of natural barriers were massive sediment aggradation that has occurred in the watershed in recent years due to changes in the natural flow regime of the watershed. The associated channel destabilization creates impassable stream segments due to a lack of flow and increased lateral migration of streams. The extent, severity, and passability of these obstacles will vary over time depending on the season and year; however, current and historic land-use practices, including forest harvesting, agriculture, and water withdrawals, have exacerbated the effect of natural barriers in the watershed. Due to the nature of these land-use practices, the severity of natural barriers was rated as Very High and the irreversibility as Medium, the latter due to the effort required to rectify poor land-use practices at a watershed scale. Overall, the planning team felt that a threat rating of ‘High’ adequately captured the effects of natural barriers.
+
+### Road-stream Crossings {.unnumbered}
+
+Road-stream crossings are an abundant structure type in the watershed, with 80 assessed and modelled crossings located on modelled anadromous salmonid habitat. Demographic road crossings (highways, municipal, and paved roads) may disconnect up to 55.39 km of habitat (57.4% of the total estimated disconnected habitat), with 88% of assessed crossings having been identified as barriers to fish passage. Resource roads disconnect 34.04 km of habitat (35.3%), with 73% of assessed crossings identified as barriers. Significant land use and linear development throughout the valley bottom has disconnected the Nicola River from important habitat in some tributaries, including Highway 5 and Highway 8. The extent of road-stream crossings was given a rating of Very High, though the collective experience and input from the planning team resulted in Low severity and irreversibility ratings due to the existing body of knowledge and resources to support the rehabilitation of road-stream crossings, though it was noted that there is significant variability between resource roads and highway crossings. The overall threat rating for road-stream crossings was given a rating of Medium.
+
+### Small Dams (\<5m height) {.unnumbered}
+
+There are five mapped dams on modelled anadromous salmonid habitat in the watershed, potentially disconnecting a combined 5.08 km (5.3%) of spawning and rearing habitat, resulting in a Low extent. The extent rating of these structures was confirmed by the planning team. There are three known fish passage structures in the watershed, including on Nicola Lake Dam, and the remaining dams likely block passage for anadromous salmonids. Many dams in the watershed are irrigation impoundments that are of little consequence to focal species. Rehabilitating dams requires significant resources; however, due to the minimal extent of dams in the watershed, a final threat rating of Low was assigned to this structure type.
+
+### Trail-Stream Crossings {.unnumbered}
+
+There are very little spatial data available on trail-stream crossings in the watershed, so the planning team was unable to quantify the true extent and severity of this structure type. However, the planning team felt that trail-stream crossings are not prevalent within the watershed and that where they do exist, they do not significantly restrict passage for anadromous salmonids. Because most crossings will likely be fords or similar structures, the rehabilitation costs associated with these barriers would be quite low. Overall, the planning team felt that the overall threat rating for trail-stream crossings was likely Low.

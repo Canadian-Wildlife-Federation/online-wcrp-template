@@ -3,23 +3,28 @@ project:
   output-dir: _book
 
 book:
-  title: "Title"
-  author: "Canadian Wildlife Federation"
-  date: last-modified
-  date-format: "DD-MM-YYYY"
+  title: "Lower Nicola Watershed Connectivity Restoration Plan: 2021 - 2040"
   chapters:
     - index.qmd
     - content/project-overview.qmd
-    - content/connectivity-status.qmd
-    - content/barrier-prioritization.qmd
+    - content/methods-definitions.qmd
+    - content/glossary.qmd
+    - content/connectivity-status-ranking.qmd
     - content/work-planning.qmd
+    - content/progress-reporting.qmd
     - content/references.qmd
     - content/version-history.qmd
-  appendices: 
-    - content/project-partners.qmd
-    - content/supplementary-information.qmd 
-    - content/data-methods.qmd
-  
+
+    - part: "Appendix A"
+      chapters:
+        - content/non-actionable-barriers.qmd
+        - content/excluded-structures.qmd
+        
+    - part: "Appendix B"
+      chapters:
+        - content/project-partners.qmd
+        - content/data-methods.qmd
+        - content/supplementary-information.qmd
   
   sidebar: 
     pinned: true
@@ -28,20 +33,21 @@ book:
       - icon: save
         menu: 
           - text: Word DOCX
-            url: _book/Horsefly-River-Watershed-Secwepemcúl’ecw-Connectivity-Remediation-Plan--2021---2040.docx
-
+            url: _book/Lower-Nicola-Watershed-Connectivity-Restoration-Plan--2021---2040.docx
 
 
 
 bibliography: references.bib
 # nocite: |
 #   @*
+engine: knitr
 
 format:
   html:
+    toc: false
     css: style.css
     theme: cosmo
-    toc-title: "WCRP"
+    toc-title: "LNIC WCRP"
     crossref:
       fig-title: '**Figure**'
       tbl-title: '**Table**'

@@ -1,5 +1,5 @@
-# Template WCRP
-This repository is built and maintained by the Canadian Wildlife Federation (CWF). The repository contains a jupyter book and a Quarto book used for the live reporting of the WCRP.
+# Lower Nicola WCRP 
+This repository is built and maintained by the Canadian Wildlife Federation (CWF). The repository contains a jupyter book and a Quarto book used for the live reporting of the Lower Nicola WCRP while pulling relevant data from [bcfishpass](https://github.com/smnorris/bcfishpass).
 
 ## Anaconda Prompt
 One may want to use a virtual environment with python version 3.8-3.11 installed.
@@ -29,5 +29,8 @@ For the libraries to work properly, it is recommended to install a "virtual envi
  - Change the text within the qmd files to reflect the information for the watershed you wish to make an WCRP for. Additionally, change the code in the API calls to reflect the watershed. For example, 'http://159.89.114.239:9002/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=HORS&barrier_type=' for the Horsefly becomes 'http://159.89.114.239:9002/functions/postgisftw.wcrp_barrier_extent/items.json?watershed_group_code=BULK&barrier_type=' for the Bulkley.
  - In order to reflect new API changes that alter habitat numbers within your watershed, your repo must be first cloned, then the quarto book should be rendered before pushing the changes back to GitHub.
  - In order to change text within the document, look through the .qmd files and find the one you wish to alter. Be careful not to change the "@" labels as they point to specific tables that are cross referenced within the document. See [here](https://www.markdownguide.org/basic-syntax/) for more info on how to make certain syntax changes within .qmd files.
+
+
+
 
 

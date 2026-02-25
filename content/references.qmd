@@ -1,6 +1,13 @@
+<!-- # Lower Nicola Watershed Connectivity Restoration Plan: 2021 - 2040 {-} -->
+
+# Acknowledgements and References {.unnumbered}
+
+## Recommended Citation {.unnumbered}
+
+## Acknowledgements {.unnumbered}
 
 
-# References {.unnumbered}
-
+## References {.unnumbered}
 ::: {#refs}
+
 :::

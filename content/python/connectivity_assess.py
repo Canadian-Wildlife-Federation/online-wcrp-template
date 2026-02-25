@@ -7,7 +7,7 @@ warnings.filterwarnings('ignore')
 
 def make_assess_table(species, kea, indicator, poor_upper, fair_upper, good_upper, api_call):
   """ builds the pandas table for connectivity status assessment
-  :species:     target species
+  :species:     focal species
   :kea:         KEA eg. Accessible Spawning Habitat
   :indicator:   indicator for assessment eg. % of total spawning habitat
   :poor_upper:  upper bound for poor range
@@ -37,7 +37,7 @@ def make_assess_table(species, kea, indicator, poor_upper, fair_upper, good_uppe
     good_bounds_str = str(fair_upper+1)+"-"+str(good_upper)+"%"
     very_good_bounds_str = ">"+str(good_upper)+"%"
     
-  df = pd.DataFrame({"Target Species":[str(species)," "],
+  df = pd.DataFrame({"Focal Species":[str(species)," "],
                    "KEA":[str(kea)," "],
                    "Indicator":[str(indicator),"Current Status:"],
                    "Poor":[poor_bounds_str," "],

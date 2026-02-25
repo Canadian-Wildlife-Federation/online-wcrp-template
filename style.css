@@ -35,6 +35,13 @@ th {
     text-align: left;
 }
 
+.table-caption {
+  color: #6c757d;    
+  font-size: 0.9em;  
+  margin-bottom: 10px; 
+  font-style: italic;    
+}
+
 .quarto-title-block .quarto-title-banner {
   /* background-image: url(images/spawn.jpg);  */
   background-size: 200px;

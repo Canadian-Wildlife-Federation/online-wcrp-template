@@ -1,0 +1,5 @@
+﻿Species,Channel Gradient (%) (Naturally Accessible Waterbodies),Channel Gradient (%) (Spawning Habitat),Mean annual discharge (m3/s) (Spawning Habitat),Channel Gradient (%) (Rearing Habitat),Mean annual discharge (m3/s) (Rearing Habitat),Minimum Lake area (ha) (Rearing Habitat),Multiplier (1.5x) (Rearing Habitat)
+Chinook Salmon,0-15,0-3 [1] [2],0.46-322.5 [3][4][5][6][7],0-5 [5][8],0.28-100 [9],,
+Coho Salmon,0-15,0-5 [6][10],0.164-59.15 [3][4][5][10][11],0-5 [8][12],0.03-40 [9][13],,Wetland
+Sockeye Salmon,0-15,0-2 [14][15],0.175-65 [3][4][5][6],,,200 [5],Lake
+Steelhead,0-20,0-4 [2][16],0.447-75 [3][4][6],0-7.4 [8],0.02-60 [9][13],,

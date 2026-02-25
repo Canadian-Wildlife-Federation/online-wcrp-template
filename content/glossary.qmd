@@ -1,0 +1,86 @@
+# Glossary
+
+### Freshwater connectivity {-} 
+
+The degree to which aquatic species can disperse and/or migrate freely through freshwater systems.  
+
+### Longitudinal connectivity {-} 
+
+Connectivity of a stream along the upstream-downstream plane, including access to tributaries and spawning and rearing habitat. Longitudinal connectivity can be fragmented by physical barriers (e.g., anthropogenic, or natural structures) or by physiological limits of distribution for species (e.g., stream gradient, temperature, or flow requirements). 
+
+### Lateral connectivity {-} 
+
+Connectivity of a stream bed to adjacent riparian wetlands, floodplains, side-channels, or off-channel features, including access to rearing and overwintering habitat. Lateral connectivity can be fragmented by physical barriers, channelization, armoring of the stream bed, or artificial flow regulation. 
+
+### Vertical connectivity {-}
+
+Connectivity of a stream bed to groundwater/hyporheic zone, including access to oxygen-rich water and temperature refugia. Vertical connectivity can be fragmented by water withdrawals and anthropogenically induced changes to the hydrological, thermal, and sediment regimes of the watershed. 
+
+### Temporal connectivity {-}
+
+Connectivity variability in any of the three spatial dimensions (longitudinal, lateral, vertical) based on changes in the natural flow regime over time. Variation in the temporal connectivity occurs naturally; however, fragmentation can be exacerbated through anthropogenically induced changes to the hydrological, thermal, and sediment regimes of the watershed. 
+
+
+### Geographic Scope {-} 
+
+The spatial bounds within which connectivity models are applied and fish-passage improvement efforts are focused. This area is refined after the accessibility model is developed to cover only streams that are naturally accessible to each focal species or guild (see naturally accessible streams below). 
+
+### Focal Species  {-}
+
+The ecologically and culturally important species (e.g., Chinook Salmon) for which habitat connectivity is being conserved and/or restored in the watershed. 
+
+### Focal Guild  {-}
+
+Two or more focal species grouped together by shared characteristics (e.g., migratory behavior, swimming ability, and habitat use).   
+
+### Key Ecological Attribute (KEA)  {-}
+
+An aspect of a focal species or guild’s biology or ecology that, if missing or altered, would lead to the loss of that focal species over time (e.g., proportion of connected spawning habitat). 
+
+### Structure  {-}
+
+A feature, either anthropogenic (e.g., culvert, dam) or a temporary natural feature (e.g., barrier beach, debris jam) that may fragment freshwater systems and limit the ability of species to disperse and/or migrate freely within their naturally accessible habitat.  Differentiated from more permanent natural features, such as waterfalls, that delineate naturally accessible waterbodies.  
+
+### Set of structures  {-}
+
+A set of two or more structures that must be addressed/considered together for restoration or rehabilitation when considering the total amount of connectivity to be gained during barrier prioritization. 
+
+
+### Current Connectivity Status {-}
+
+The measure of important habitat (i.e., amount, proportion, or index) that is currently connected (i.e., unaffected by structures with a status of unknown, partially passable, or impassable) for each focal species.  For non-diadromous species, indices such as the longest fragment or Dendridic Connectivity Index – potadromous (DCIp; Cote et al. 2009).  
+
+### Connectivity Goal {-}
+
+A SMART (Specific, Measurable, Achievable, Relevant, and Time-Bound) goal representing the desired future connectivity status of each focal species. 
+
+### Structure Prioritization {-} 
+
+An analysis that ranks structures (individually and/or in sets) by the amount of key habitat disconnected by each individual structure. Structures are ranked in descending order according connectivity gains (e.g., greatest amount of linear km of important habitat) if restored or rehabilitated. This analysis includes structures with a passability status of “unknown”, “partially passable”, or “impassable”.  
+ 
+### Restoration {-}
+
+Returning the ecological structure and function (e.g., natural channel-forming processes) of a site to pre-disturbance conditions. 
+
+### Rehabilitation {-}
+
+The partial recovery of ecosystem function. This is typical when improving passage by replacing one type of crossing with another that is passable but may still affect the streambed or channel-forming processes. 
+
+### Rehabilitated barriers {-}
+
+Structures for which connectivity for aquatic species was restored by altering or maintaining a structure that previously impeded movement. 
+
+### Remediation {-}
+
+A term for a form of restoration most often associated with mining, referring to the remediation of contaminated sediments. Often used as jargon in fish-passage discussions because it applies to both fish passage and barriers (i.e., both can be described as “remediated”).  Most fish-passage projects involve ecological rehabilitation, but it is inaccurate to write that a barrier was rehabilitated. Instead, fish passage should be described as rehabilitated, improved, or restored (if appropriate), and barriers described as removed or addressed. 
+
+### Excluded structures {-}
+
+Structures that were investigated during a project but were removed from consideration or the model. Reasons for their exclusion could be that they do not exist, are passable, or no key habitat was found upstream. 
+
+### Assessed structures that remain data deficient {-}
+
+Structures that have had some form of assessment but need further investigation before a decision can be made to categorize them as either confirmed barriers, excluded structures (passable, non-existent, no suitable upstream habitat), or rehabilitated structures.  
+
+
+

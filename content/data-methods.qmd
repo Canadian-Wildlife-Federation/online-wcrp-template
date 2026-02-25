@@ -1,26 +1,11 @@
-# Data Download and Methods {-}
 
-## Modelled Habitat Maps {-}
+# Detailed Methods {-}
 
-High-resolution PDF maps accessed [here](url). In each individual map sheet, priority barriers are symbolized using the following notation: 
-
-![Map description.](images/overview-map-hors.png){#fig-over}
 
 ## Connectivity Status Assessment Methods {-}
 
-The connectivity status assessment ... The model spatially locates known and modelled barriers to fish passage, identifies potential spawning and rearing habitat for target species, and estimates the amount of habitat that is currently accessible to target species. The habitat model uses two geomorphic characteristics of the stream network — channel gradient and mean annual discharge — to identify potential spawning habitat and rearing habitat for each target species. The habitat model does not attempt to definitively map each habitat type nor estimate habitat quality, but rather identifies stream segments that have high potential to support spawning or rearing habitat for each species based on the geomorphic characteristics of the segment. For more details on the connectivity and habitat model structure and parameters, please see @Mazany-Wright2021-rz. The variables and thresholds used to model potential spawning and rearing habitat for each target species are summarized in (table).
 
-```{r, echo = FALSE, results = 'asis'}
-#| label: tbl-param
-#| tbl-cap: "Additional Key Actors. Key Actors are the individuals, groups, and/or organizations, outside of the planning team, with influence and relevant experience in the watershed, whose engagement will be critical for the successful implementation of this WCRP."
-#| warning: false
 
-library("flextable")
 
-data <- read.csv("data/additional-key-actors.csv", check.names=FALSE)
-ft <- flextable(data)
-ft <- bg(ft, bg = "#008270", part = "header")
-ft <- color(ft, color = "white", part = "header")
-ft <- set_caption(ft)
-ft |> autofit() 
-```
+[References: [1] @Busch2011-uy. [2] @Cooney2006-qf. [3] @Bjornn1991-zd. [4] @Neuman1977-wg. [5] @Woll2017-vf. [6] @Roberge2002-xq. [7] @Raleigh1986-cn. [8] @Porter2008-qd. [9] @Agrawal2005-xu. [10] @Sloat2017-bp. [11] @Mcmahon1983-rz. [12] @Rosenfeld2000-vq. [13] @Burnett2007-yv. [14] @Lake1999-tl. [15] @Hoopes1972.]{style="color: grey"}
+

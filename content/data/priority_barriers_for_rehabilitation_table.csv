@@ -1,1 +1,7 @@
-﻿ID,Watercourse name,Road name,Location/coordinates,Barrier type,Barrier owner,Barrier set identifier,# barriers in set,Number of downstream barriers,Upstream habitat quality,Total habitat gain (km),Habitat gain - spawning (km),Habitat gain - rearing (km),Next steps,Reason
+﻿ID,Stream Name,Road name,Barrier owner,Barrier type,PSCIS status,Barrier status,Number of downstream barriers,Spawning habitat blocked-all species (km),Rearing habitat blocked-all species (km),Priority status,Comments
+1011301807,Brook Creek,Kettle Valley Railway,Kettle Valley Railway Association,Resource road crossing, Assessed,P,3,4.88,4.88,Short,Remediate in 2023 if continues to be a low flow barrier
+197039,Kwinshatin Creek,Coldwater Road,Coldwater Band,Municipal road crossing,Assessed,B,1,0,0.43,Medium,Remediation deferred until work from winter storms complete
+197889,Skuhun Creek,Highway 8,MOTI,Concrete bridge apron,Assessed,B,1,2.37,3.39,Short,"MOTI plans to do some remediation work as part of Highway 8 flood repairs, aiming for 2023 instream work window"
+N/a,Skuhun Creek,N/a,N/a - natural feature,Perched stream mouth,Assessed,B,0,0,0.68,Remediated,Stream mouth perched following November storms. Remediated in early 2022.
+N/a,Clapperton Creek,N/a (dam),Orphaned,Dam,Assessed,B,0,6.36,7.38,Ready to advance to design,Barrier owner determined to be orphaned. Known Steelhead spawning stream. 
+,,,,,,,Total Gain:,13.61,16.76,,

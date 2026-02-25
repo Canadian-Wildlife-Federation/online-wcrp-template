@@ -1,16 +1,17 @@
+<!-- # Horsefly River Watershed Secwepemcúl’ecw Connectivity Remediation Plan: 2021 - 2040 {-} -->
 
-## Project Partners {-}
+## Partners {.unnumbered}
 
-## Planning Team {-}
+### Planning Team {.unnumbered}
 
 ```{r echo = FALSE}
 #| label: tbl-planteam
-#| tbl-cap: "SAMPLE <watershed> WCRP planning team members. Planning team members contributed to the development of this plan by participating in a series of workshops and document and data review. The plan was generated based on the input and feedback of the local groups and organizations listed in this table."
+#| tbl-cap: "Lower Nicola River watershed WCRP planning team members. Planning team members contributed to the development of this plan by participating in a series of workshops and document and data review. The plan was generated based on the input and feedback of the local groups and organizations list in this table."
 #| warning: false
 
 library("flextable")
 
-data <- read.csv("data/planning_team.csv", check.names=FALSE)
+data <- read.csv("data/planning_team_lnic.csv", check.names=FALSE)
 ft <- flextable(data)
 ft <- bg(ft, bg = "#008270", part = "header")
 ft <- color(ft, color = "white", part = "header")
@@ -18,11 +19,11 @@ ft <- set_caption(ft)
 ft |> autofit() 
 ```
 
-## Key Actors {-}
+### Key Actors {.unnumbered}
 
 ```{r keyact, echo = FALSE, results = 'asis'}
 #| label: tbl-keyact
-#| tbl-cap: "SAMPLE Additional Key Actors in the <watershed>. Key Actors are the individuals, groups, and/or organizations, outside of the planning team, with influence and relevant experience in the watershed, whose engagement will be critical for the successful implementation of this WCRP."
+#| tbl-cap: "Additional key actors in the Lower Nicola River watershed. Key actors are the individuals, groups, and/or organizations, outside of the planning team, with influence and relevant experience in the watershed, whose engagement will be critical for the successful implementation of this WCRP. Key actors were identified by the planning team and do not reflect a commitment to contribute to the implementation and updating of this WCRP."
 #| warning: false
 
 library("flextable")
@@ -34,4 +35,3 @@ ft <- color(ft, color = "white", part = "header")
 ft <- set_caption(ft)
 ft |> autofit() 
 ```
-

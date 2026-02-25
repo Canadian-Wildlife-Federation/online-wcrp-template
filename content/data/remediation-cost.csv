@@ -1,5 +1,9 @@
 ﻿Barrier Type,Cost per barrier,Count,Total Cost
-Dam,"$435,000 ",3,"$1,305,000 "
-Resource road,"$500,000 ",8,"$4,000,000 "
-Municipal/paved road,"$1,500,000 ",3,"$4,500,000 "
-Total,,14,"$9,805,000 "
+Dam,"$750,000",3,"$2,250,000"
+Resource road,"$500,000",7,"$3,500,000"
+Municipal/paved road,"$1,500,000",3,"$4,500,000"
+Abandoned railway crossing,"$8,000",1,"$8,000"
+Highway crossing,"$5,200,000",1,"$5,200,000"
+Total,,15,"$15,458,000"
+,,,
+,,,
