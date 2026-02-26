@@ -14,7 +14,7 @@
     "href": "index.html#purpose",
     "title": "Lower Nicola Watershed Connectivity Restoration Plan: 2021 - 2040",
     "section": "Purpose",
-    "text": "Purpose",
+    "text": "Purpose\nThe purpose of the [name] Watershed Connectivity Restoration Plan (WCRP) is to improve understanding of habitat connectivity for [focal species] in the [X Watershed or X, Y, and Z watersheds] and inform efforts to close knowledge gaps and prioritize restoration. Local data and knowledge are combined with connectivity modelling to estimate current connectivity status and identify structures that potentially block the most habitat. This informs the prioritization of field assessments to close the most significant knowledge gaps efficiently. Information from field assessments of barrier status and habitat condition are incorporated into the model, improving understanding of which barriers block the most habitat, and informing restoration prioritization. As knowledge gaps are closed and barriers are addressed, this plan will be revised to summarize progress and provide updated estimates of connectivity status and the status and relative importance of remaining structures.",
     "crumbs": [
       "Project Overview"
     ]
@@ -24,7 +24,7 @@
     "href": "index.html#current-connectivity-status",
     "title": "Lower Nicola Watershed Connectivity Restoration Plan: 2021 - 2040",
     "section": "Current Connectivity Status",
-    "text": "Current Connectivity Status",
+    "text": "Current Connectivity Status\nIn the [X Watershed or X, Y, and Z watersheds], [X] km of [focal species] habitat are currently connected to the ocean and [X] km are disconnected from it. This means that [X]% of the [X] km of total habitat is connected.\nIn the [X Watershed or X, Y, and Z watersheds], [X] structures potentially disconnect [focal species] habitat. Of these, [X] are identified as barriers in need of rehabilitation (priority barriers), [X] are identified as barriers that do not warrant rehabilitation (non-actionable), and [X] require further field assessment.",
     "crumbs": [
       "Project Overview"
     ]
@@ -44,7 +44,7 @@
     "href": "index.html#map",
     "title": "Lower Nicola Watershed Connectivity Restoration Plan: 2021 - 2040",
     "section": "Map",
-    "text": "Map\n\n\n\nMap of focal species habitat and structures that are confirmed or potential barriers to fish passage in the Lower Nicola watershed as of x date. Structure data were obtained from the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that focal species could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible areas that may be used by focal species for key habitat function(s). Available local knowledge and data were incorporated and overrule habitat model results. Thick light-blue lines represent habitat that is currently connected, whereas thick red lines represent habitat considered to be disconnected because it is upstream of confirmed barriers or data-deficient structures. The y-axis represents the amount of habitat (km) blocked by each structure, discounted by 50% for first-order streams, and by passability (25%, 50%, 0r 75%) of partial barriers. Barriers that were rehabilitated through implementation of this plan are shown, but other excluded structures (e.g., those found to be passable) are not.",
+    "text": "Map\n\n\n\nMap of [focal species] habitat and structures that are confirmed or potential barriers to fish passage in the [X Watershed or X, Y, and Z watersheds] as of [dd month year]. Structure data were obtained from the Canadian Aquatic Barriers Database (aquaticbarriers.ca). The accessibility model represents areas of the watershed that [focal species] could access naturally in the absence of anthropogenic barriers. The habitat model represents the subset of accessible areas that may be used by [focal species for key habitat function(s)]. Available local knowledge and data were incorporated and overruled habitat model results. Thick light-blue lines represent habitat that is currently connected, whereas thick red lines represent habitat considered to be disconnected because it is upstream of barriers or unassessed structures. Barriers that were rehabilitated through implementation of this plan are shown, but other excluded structures (e.g., those found to be passable) are not.",
     "crumbs": [
       "Project Overview"
     ]
@@ -54,7 +54,7 @@
     "href": "index.html#progress-summary",
     "title": "Lower Nicola Watershed Connectivity Restoration Plan: 2021 - 2040",
     "section": "Progress Summary",
-    "text": "Progress Summary",
+    "text": "Progress Summary\nThis WCRP was initiated in [year]. Since then, the passability of [X] structures has been assessed, and further habitat assessments were completed at [X] of these. Fish passage has been rehabilitated at [X] barriers, resulting in improved or restored access to [X] km of habitat. [Add summary of any other activities that have been completed].",
     "crumbs": [
       "Project Overview"
     ]
@@ -94,7 +94,7 @@
     "href": "content/project-overview.html#scope",
     "title": "1  Vision and Scope",
     "section": "Scope",
-    "text": "Scope",
+    "text": "Scope\nThis WCRP focuses on [focal species and description of key habitat].\nFigure [X]: Map of the geographic scope, which includes the [X Watershed or X, Y, and Z watersheds] in [province or territory].",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Vision and Scope</span>"
     ]
@@ -104,7 +104,17 @@
     "href": "content/methods-definitions.html",
     "title": "2  Methods and Definitions",
     "section": "",
-    "text": "Connectivity Modelling",
+    "text": "2.1 Accessibility Model\nNaturally accessible waterbodies are those that would likely be accessible to focal species if no human-made barriers existed on the landscape. These were identified based on natural barriers (i.e., waterfalls, steep stream gradients, or areas with subsurface flows) that would naturally limit upstream movement. Modelled natural barriers were excluded if focal species observations existed upstream of them.\n##Habitat Model A subset of the naturally accessible waterbody layer was defined as key habitat (e.g., habitat likely to support spawning or rearing), rather than simply being used as a movement corridor. Habitat models typically identify areas that have a higher potential to support key habitat based on stream characteristics such as gradient and discharge, and are overruled by field data and local knowledge of habitat condition and use.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methods and Definitions</span>"
+    ]
+  },
+  {
+    "objectID": "content/methods-definitions.html#connectivity-modelling",
+    "href": "content/methods-definitions.html#connectivity-modelling",
+    "title": "2  Methods and Definitions",
+    "section": "Connectivity Modelling",
+    "text": "Connectivity Modelling\nA layer of known or modelled structures was overlaid on the habitat model output. Modelled stream crossings were created from stream network and road/railway Geographic Information System (GIS) data, by mapping where a road or railway crosses a stream. Dam data were obtained from the Canadian Aquatic Barriers Database (aquaticbarriers.ca). All mapped dams and modeled crossings (henceforth structures) downstream of key habitat were considered, but some were classified as non-existent or passable prior to initiating field work and excluded from the model. Stream crossings on 6th order and larger streams were assumed to be bridges and classified as passable, as were those identified as bridges in available infrastructure spatial layers. Remaining structures downstream of habitat were checked on Google Earth to verify that they were not bridges, cross-ditches, or non-existent crossings. Data from previous field assessments were incorporated and passable structures were excluded. Assessed barriers, dams lacking fishways, and unassessed structures were all treated as barriers in the connectivity model. Models were run to produce initial outputs, and maps were created showing disconnected key habitat and associated structures.\nLocal knowledge and data were incorporated into model development in two phases and overruled modeled outputs where the two differed. Existing reports on habitat, barriers, and fish distributions, when available, were incorporated into the initial model outputs. Maps of initial outputs were then shared with local knowledge holders, who identified model errors or omissions (e.g., passable structures, or known spawning habitats that were not identified by the model). Corrections to model data were made based on local knowledge, and models were re-run.\nConnectivity status was estimated by calculating the proportion of habitat that is connected to the ocean (i.e., not fragmented by human-made barriers). Habitat with no structures or only passable structures downstream was considered connected.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methods and Definitions</span>"
     ]
@@ -114,7 +124,7 @@
     "href": "content/methods-definitions.html#structure-ranking",
     "title": "2  Methods and Definitions",
     "section": "Structure Ranking",
-    "text": "Structure Ranking",
+    "text": "Structure Ranking\nStructures, and sets of structures that combine to disconnect habitat, were ranked by the amount of habitat upstream. For sets of structures, the total amount of habitat blocked by the set was averaged by the number of barriers in the set, and this average value determined the rank of each structure in the set. Unassessed structures were considered barriers for ranking purposes.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Methods and Definitions</span>"
     ]
@@ -134,7 +144,7 @@
     "href": "content/connectivity-status-ranking.html",
     "title": "4  Connectivity Status and Ranking",
     "section": "",
-    "text": "Current Connectivity Status",
+    "text": "Current Connectivity Status\nTo inform prioritization of field assessments on structures that potentially block the most habitat if they are impassable. Ranking focused on the amount of habitat upstream and ranks do not represent other factors relevant to restoration prioritization, such as habitat quality, cost, or social priorities.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Connectivity Status and Ranking</span>"
     ]

@@ -262,11 +262,21 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<p>Connectivity models were produced using [XXFishPass], an open-source freshwater connectivity modelling framework, which combines provincial spatial layers with WCRP-specific data tables and includes three sub-models:</p>
+<section id="accessibility-model" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="accessibility-model"><span class="header-section-number">2.1</span> Accessibility Model</h2>
+<p>Naturally accessible waterbodies are those that would likely be accessible to focal species if no human-made barriers existed on the landscape. These were identified based on natural barriers (i.e., waterfalls, steep stream gradients, or areas with subsurface flows) that would naturally limit upstream movement. Modelled natural barriers were excluded if focal species observations existed upstream of them.</p>
+<p>##Habitat Model A subset of the naturally accessible waterbody layer was defined as key habitat (e.g., habitat likely to support spawning or rearing), rather than simply being used as a movement corridor. Habitat models typically identify areas that have a higher potential to support key habitat based on stream characteristics such as gradient and discharge, and are overruled by field data and local knowledge of habitat condition and use.</p>
+</section>
 <section id="connectivity-modelling" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="connectivity-modelling">Connectivity Modelling</h2>
+<p>A layer of known or modelled structures was overlaid on the habitat model output. Modelled stream crossings were created from stream network and road/railway Geographic Information System (GIS) data, by mapping where a road or railway crosses a stream. Dam data were obtained from the Canadian Aquatic Barriers Database (aquaticbarriers.ca). All mapped dams and modeled crossings (henceforth structures) downstream of key habitat were considered, but some were classified as non-existent or passable prior to initiating field work and excluded from the model. Stream crossings on 6th order and larger streams were assumed to be bridges and classified as passable, as were those identified as bridges in available infrastructure spatial layers. Remaining structures downstream of habitat were checked on Google Earth to verify that they were not bridges, cross-ditches, or non-existent crossings. Data from previous field assessments were incorporated and passable structures were excluded. Assessed barriers, dams lacking fishways, and unassessed structures were all treated as barriers in the connectivity model. Models were run to produce initial outputs, and maps were created showing disconnected key habitat and associated structures.</p>
+<p>Local knowledge and data were incorporated into model development in two phases and overruled modeled outputs where the two differed. Existing reports on habitat, barriers, and fish distributions, when available, were incorporated into the initial model outputs. Maps of initial outputs were then shared with local knowledge holders, who identified model errors or omissions (e.g., passable structures, or known spawning habitats that were not identified by the model). Corrections to model data were made based on local knowledge, and models were re-run.</p>
+<p>Connectivity status was estimated by calculating the proportion of habitat that is connected to the ocean (i.e., not fragmented by human-made barriers). Habitat with no structures or only passable structures downstream was considered connected.</p>
 </section>
 <section id="structure-ranking" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="structure-ranking">Structure Ranking</h2>
+<p>Structures, and sets of structures that combine to disconnect habitat, were ranked by the amount of habitat upstream. For sets of structures, the total amount of habitat blocked by the set was averaged by the number of barriers in the set, and this average value determined the rank of each structure in the set. Unassessed structures were considered barriers for ranking purposes.</p>
 
 
 </section>
