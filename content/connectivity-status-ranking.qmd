@@ -3,7 +3,7 @@
 # Connectivity Status and Ranking
 
 ## Current Connectivity Status {-}
-
+To inform prioritization of field assessments on structures that potentially block the most habitat if they are impassable. Ranking focused on the amount of habitat upstream and ranks do not represent other factors relevant to restoration prioritization, such as habitat quality, cost, or social priorities.   
 
 ## Habitat Accumulation Summary Table {.unnumbered}
 

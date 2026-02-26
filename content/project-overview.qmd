@@ -8,4 +8,8 @@
 
 ## Scope {.unnumbered}
 
+This WCRP focuses on [focal species and description of key habitat]. 
 
+ 
+
+Figure [X]: Map of the geographic scope, which includes the [X Watershed or X, Y, and Z watersheds] in [province or territory]. 
